@@ -5,7 +5,7 @@ public class Problem04 {
         System.out.print("1st int? ");
         Scanner intg = new Scanner(System.in);
         int number = intg.nextInt();
-        System.out.print("2st int? ");
+        System.out.print("2nd int? ");
         int number2 = intg.nextInt();
         System.out.println(number + " + " + number2 + " = " + (number + number2));
         System.out.println(number + " - " + number2 + " = " + (number - number2));
