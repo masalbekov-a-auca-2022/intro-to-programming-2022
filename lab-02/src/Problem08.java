@@ -7,6 +7,5 @@ public class Problem08 {
         double p = num.nextDouble();
         System.out.println( p + " pounds is " + p * 0.454 + " kilograms");
 
-
     }
 }
