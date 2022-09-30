@@ -10,6 +10,5 @@ public class Problem10 {
         b = b + y*(a/7.0) + y*(a/45.0) - y*(a/13.0);
         System.out.println("The population in 5 years is " + Math.round(b));
 
-
     }
 }
