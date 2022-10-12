@@ -5,6 +5,7 @@ public class Problem01 {
         System.out.print("some real number? ");
         Scanner num = new Scanner(System.in);
         double number = num.nextDouble();
-        System.out.println("|" + number + "| = " + Math.abs(number));
+        double abs_number = Math.abs(number);
+        System.out.printf("| %.4f| = %.4f", number, abs_number);
     }
 }
