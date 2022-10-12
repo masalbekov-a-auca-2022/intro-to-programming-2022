@@ -7,6 +7,7 @@ public class Problem02 {
         int a = num.nextInt();
         System.out.print("2nd value? ");
         int b = num.nextInt();
+
         System.out.println("Before swapping: a = " + a + "; b = " + b + ";");
         a = a + b;
         b = a - b;
