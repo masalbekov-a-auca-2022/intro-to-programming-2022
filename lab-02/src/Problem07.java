@@ -9,6 +9,5 @@ public class Problem07 {
         double result = ((int)(10000.0 * r *r *Math.PI))/10000.0;
         System.out.println("The area is " +result);
         System.out.printf("The volume is %.1f", result * l);
-
     }
 }
