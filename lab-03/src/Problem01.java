@@ -6,6 +6,6 @@ public class Problem01 {
         Scanner num = new Scanner(System.in);
         double number = num.nextDouble();
         double abs_number = Math.abs(number);
-        System.out.printf("| %.4f| = %.4f", number, abs_number);
+        System.out.printf("|%.4f| = %.4f", number, abs_number);
     }
 }
