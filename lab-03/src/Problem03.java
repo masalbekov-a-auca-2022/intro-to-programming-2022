@@ -16,6 +16,5 @@ public class Problem03 {
         } else {
             System.out.println("The value " + b + " is the greatest one.");
         }
-
     }
 }
