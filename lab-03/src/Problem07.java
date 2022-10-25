@@ -3,9 +3,9 @@ import java.util.Scanner;
 public class Problem07 {
     public static void main(String[] args) {
         Scanner num = new Scanner(System.in);
-        System.out.println("Enter today's day: ");
+        System.out.print("Enter today's day: ");
         int today = num.nextInt();
-        System.out.println("Enter the number of days elapsed since today: ");
+        System.out.print("Enter the number of days elapsed since today: ");
         int elapsed = num.nextInt();
         int dayInFuture = (today + elapsed) % 7;
         String dayNameToday ="", dayNameFuture ="";
@@ -39,6 +39,6 @@ public class Problem07 {
         } else if (dayInFuture == 6) {
             dayNameFuture = "Saturday";
         }
-        System.out.println("Today is " + dayNameToday + "and the future day is " + dayNameFuture);
+        System.out.println("Today is " + dayNameToday + " and the future day is " + dayNameFuture);
     }
 }
