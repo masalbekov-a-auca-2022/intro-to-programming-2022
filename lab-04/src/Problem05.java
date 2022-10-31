@@ -35,9 +35,9 @@ public class Problem05 {
                 break;
         }
         if (leap == 0) {
-            System.out.printf("Number of days: %s", day);
+            System.out.printf("Number of days: %s%n", day);
         } else if (day == 28){
-            System.out.printf("Number of days: %s", day+1);
+            System.out.printf("Number of days: %s%n", day+1);
         }
     }
 }
