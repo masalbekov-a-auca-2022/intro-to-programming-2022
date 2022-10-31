@@ -8,7 +8,8 @@ public class Problem09 {
         int player = scanner.nextInt();
         Random rand = new Random();
         int computer = rand.nextInt(3);
-        System.out.printf("The computer is %s. You are %s. ", nameofShape(computer), nameofShape(player));
+        System.out.printf("The computer is %s. You are %s", nameofShape(computer), nameofShape(player));
+        System.out.print(player == computer ? " too. " : ". ");
         if (player == 0 && computer == 2) {
             System.out.println("You won");
         } else if (computer == 0 && player == 2) {
