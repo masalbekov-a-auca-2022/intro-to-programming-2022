@@ -59,7 +59,7 @@ public class Problem10 {
                s = "Spades";
                break;
        }
-        System.out.printf("The card you picked is %s of %s", r, s);
+        System.out.printf("The card you picked is %s of %s%n", r, s);
 
 
     }
