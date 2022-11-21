@@ -6,12 +6,12 @@ public class Problem03 {
         int bats = 0;
         double score = 0;
         int amount = scanner.nextInt();
-        for (int i =0; i < amount; i++){
+        for (int i = 0; i < amount; i++) {
             int score1 = scanner.nextInt();
-            if(score1<0) continue;
+            if (score1 < 0) continue;
             bats++;
-            score +=score1;
+            score += score1;
         }
-        System.out.println(score/bats);
+        System.out.println(score / bats);
     }
 }
