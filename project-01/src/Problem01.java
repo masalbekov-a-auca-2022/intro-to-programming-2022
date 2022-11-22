@@ -16,13 +16,21 @@ public class Problem01 extends PApplet {
     int dy = 0;
 
     public void draw() {
-
-
         noStroke();
+        fill(0,0,0,40);
         rect(0, 0, width, height);
         background(0, 0, 0);
         fill(0, 0, 255);
         circle(width / 4f + dx, height / 4f + dy, 50);
+        fill(0, 0, 255);
+        circle(width*3 / 4f + dx, height / 4f + dy, 50);
+        fill(0, 0, 255);
+        circle(width / 4f + dx, height*3 / 4f + dy, 50);
+        fill(0, 0, 255);
+        circle(width / 2f + dx, height / 2f + dy, 50);
+        fill(0, 0, 255);
+        circle(width*3 / 4f + dx, height*3 / 4f + dy, 50);
+
         if (dx >= width / 4 - 25 || dx <= -width / 4 + 25) {
             moveX *= -1;
         }
