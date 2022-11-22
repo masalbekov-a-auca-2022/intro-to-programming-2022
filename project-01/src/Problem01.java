@@ -22,13 +22,13 @@ public class Problem01 extends PApplet {
         background(0, 0, 0);
         fill(0, 0, 255);
         circle(width / 4f + dx, height / 4f + dy, 50);
-        fill(0, 0, 255);
+        fill(0, 214, 120);
         circle(width*3 / 4f + dx, height / 4f + dy, 50);
-        fill(0, 0, 255);
+        fill(255, 255, 0);
         circle(width / 4f + dx, height*3 / 4f + dy, 50);
-        fill(0, 0, 255);
+        fill(255, 0, 255);
         circle(width / 2f + dx, height / 2f + dy, 50);
-        fill(0, 0, 255);
+        fill(255, 0, 0);
         circle(width*3 / 4f + dx, height*3 / 4f + dy, 50);
 
         if (dx >= width / 4 - 25 || dx <= -width / 4 + 25) {
