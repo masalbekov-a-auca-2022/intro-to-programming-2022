@@ -19,7 +19,6 @@ public class Problem01 extends PApplet {
         noStroke();
         fill(0,0,0,40);
         rect(0, 0, width, height);
-        background(0, 0, 0);
         fill(0, 0, 255);
         circle(width / 4f + dx, height / 4f + dy, 50);
         fill(0, 214, 120);
