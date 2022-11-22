@@ -1,10 +1,8 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-    float x;
-    float y;
-    float x1;
-    float y1;
+    int moveX;
+    int moveY;
     float dx;
     float dy;
 
@@ -13,31 +11,41 @@ public class Problem01 extends PApplet {
     }
 
     public void setup() {
-        x = width/2f;
-        y = height/2f;
-        x1 = width/3f;
-        y1 = height/3f;
-        dx = random(-10,10);
-        dy = random(-10,10);
-        frameRate(40);
-
+        int moveX = (int) Math.floor(Math.random() * 9) + 7;
+        int moveY = (int) Math.floor(Math.random() * 9) + 7;
+        dx = 0;
+        dy = 0;
     }
 
     public void draw() {
+        noStroke();
         background(0, 0, 0);
         fill(0, 0 ,255);
-        circle(x, y, 50);
-        circle(x1, y1,50);
-        y += dy;
-        if(y>=height){
-            y = height - 1;
-            dy = -dy;
+        circle(width/4f +dx, height/4f+dy,50);
+        if (dx >= width / 4 || dx <= -width / 4){
+            moveX = -moveX;
         }
-        if(y < 0){
-            y = 0;
-            dy = -dy;
+        if (dx >= width / 4 || dx <= -width / 4){
+            moveY= -moveY;
         }
-    }
+        dx+=moveX;
+        dy+=moveY;
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+        }
 
     public static void main(String[] args) {
         PApplet.main("Problem01");
