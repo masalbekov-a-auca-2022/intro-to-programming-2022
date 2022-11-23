@@ -6,7 +6,7 @@ public class Problem17 {
         int a = scanner.nextInt();
         int answer = 1;
         int b = 2;
-        if (a == 0 || a ==1) {
+        if (a == 0 || a == 1) {
             System.out.println(0);
         } else {
             while (a > b) {
