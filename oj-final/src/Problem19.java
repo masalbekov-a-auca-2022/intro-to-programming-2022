@@ -6,7 +6,7 @@ public class Problem19 {
         int x = scanner.nextInt();
         int m = scanner.nextInt();
         int i =0;
-        while (i <= 101) {
+        while (i < 101) {
             i++;
             if ((i * x  % m == 1)) {
                 System.out.println(i);
