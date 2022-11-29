@@ -7,7 +7,7 @@ import java.util.Scanner;public class Problem21 {
         int sum = n;
         int i = 0;
         while (sum <= p ){
-            sum+= n*r ;
+            sum+= n*r;
             n*=r ;
             i++;
         }
