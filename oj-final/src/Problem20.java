@@ -23,7 +23,7 @@ public class Problem20 {
         } else if (w > 0){
             System.out.println("3");
         } else {
-            System.out.println("-1");
+            System.out.println("-1 ");
         }
     }
 }
