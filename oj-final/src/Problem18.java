@@ -8,7 +8,7 @@ public class Problem18 {
         boolean isTrue = true;
 
         while (isTrue) {
-            if (Math.pow(a,  2) > num) {
+            if (Math.pow(a, 2) > num) {
                 a--;
                 isTrue = false;
             } else {
