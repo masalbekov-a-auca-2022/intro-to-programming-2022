@@ -13,7 +13,7 @@ public class Problem19 {
                 break;
             }
             if (i == 101) {
-                System.out.println(" No such integer exists.");
+                System.out.println("No such integer exists.");
             }
         }
     }
