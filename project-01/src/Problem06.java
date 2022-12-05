@@ -46,21 +46,28 @@ public class Problem06 extends PApplet {
         float sunY = height * 0.5f;
         celestialBody(sunX, sunY, SUN_D, 255, 255, 0, 255 );
 
+
         //Earth
         float earthX = sunX + cos(earthOrbitAngle) * EARTH_ORBIT;
         float earthY = sunY + sin(earthOrbitAngle) * EARTH_ORBIT;
         celestialBody(earthX, earthY, EARTH_D, 28, 170, 214, 255);
         earthOrbitAngle += EARTH_ORBIT_SPEED;
+
+
         //Venus
         float venusX = sunX + cos(venusOrbitAngle) * VENUS_ORBIT;
         float venusY = sunY + sin(venusOrbitAngle) * VENUS_ORBIT;
         celestialBody(venusX, venusY, VENUS_D, 255, 102, 0, 255);
         venusOrbitAngle += VENUS_ORBIT_SPEED;
+
+
         //Moon
         float moonX = earthX + cos(moonOrbitAngle) * MOON_ORBIT;
         float moonY = earthY + sin(moonOrbitAngle) * MOON_ORBIT;
         celestialBody(moonX, moonY, MOON_D, 204, 255, 255, 255);
         moonOrbitAngle += MOON_ORBIT_SPEED;
+
+        //Buttons
 
         //TODO
 
