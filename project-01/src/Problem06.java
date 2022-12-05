@@ -14,6 +14,12 @@ public class Problem06 extends PApplet {
     float venusOrbitAngle = 0.0f;
 
 
+    static final float MOON_D = SUN_D * 0.15f;
+    static final float MOON_ORBIT = 70.0f;
+    static final float MOON_ORBIT_SPEED = 0.07f;
+    float moonOrbitAngle = 0.0f;
+
+
 
     public void celestialBody(float x, float y, float diam, int rColor, int gColor, int bColor, int alpha) {
         noStroke();
@@ -50,6 +56,11 @@ public class Problem06 extends PApplet {
         float venusY = sunY + sin(venusOrbitAngle) * VENUS_ORBIT;
         celestialBody(venusX, venusY, VENUS_D, 255, 102, 0, 255);
         venusOrbitAngle += VENUS_ORBIT_SPEED;
+        //Moon
+        float moonX = earthX + cos(moonOrbitAngle) * MOON_ORBIT;
+        float moonY = earthY + sin(moonOrbitAngle) * MOON_ORBIT;
+        celestialBody(moonX, moonY, MOON_D, 204, 255, 255, 255);
+        moonOrbitAngle += MOON_ORBIT_SPEED;
 
         //TODO
 
