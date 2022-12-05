@@ -10,7 +10,7 @@ public class Problem06 extends PApplet {
     static final float EARTH_ORBIT_SPEED = 0.02f;
     float earthOrbitAngle = 0.0f;
 
-    public void celestialBody(float x, float y, float diam, int color){
+    public void celestialBody(float x, float y, float diam, int color) {
         noStroke();
         fill(color);
         circle(x, y, diam);
@@ -31,19 +31,17 @@ public class Problem06 extends PApplet {
 
 
         // Sun
-        float sunX = width*0.5f;
-        float sunY = height*0.5f;
+        float sunX = width * 0.5f;
+        float sunY = height * 0.5f;
         celestialBody(sunX, sunY, SUN_D, SUN_COLOR);
 
         //Earth
-
-        float earthX = width*0.5f;
-        float earthY =height*0.5f;
+        float earthX = sunX + cos(earthOrbitAngle) * EARTH_ORBIT;
+        float earthY = sunY + sin(earthOrbitAngle) * EARTH_ORBIT;
         celestialBody(earthX, earthY, EARTH_D, EARTH_COLOR);
-        earthOrbitAngle +=EARTH_ORBIT_SPEED;
+        earthOrbitAngle += EARTH_ORBIT_SPEED;
 
         //TODO
-
 
 
     }
