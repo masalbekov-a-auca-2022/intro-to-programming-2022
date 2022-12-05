@@ -25,8 +25,11 @@ public class Problem06 extends PApplet {
         noStroke();
         fill(rColor, gColor, bColor, alpha);
         circle(x, y, diam);
+    }
 
-
+    public void buttons(float x, float y, float diam){
+        stroke(255, 0, 0);
+        circle(x, y, diam);
     }
 
 
@@ -68,6 +71,14 @@ public class Problem06 extends PApplet {
         moonOrbitAngle += MOON_ORBIT_SPEED;
 
         //Buttons
+        if (mouseX < width && mouseX > width-400 && mouseY > height*0.25 && height < height*0.01f){
+            buttons(sunX, sunY, SUN_D);
+        } else {
+            noStroke();
+        }
+        fill(0,0,255);
+        rect(1200, 20, 300, 160);
+
 
         //TODO
 
