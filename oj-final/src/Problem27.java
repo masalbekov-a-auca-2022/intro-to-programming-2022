@@ -8,7 +8,7 @@ public class Problem27 {
         for (int i = 1; i <= a - 3; i++) {
             for (int j = i + 1; j <= a - 2; j++) {
                 for (int k = j + 1; k <= a - 1; k++) {
-                    counter ++;
+                    counter++;
                 }
             }
         }
