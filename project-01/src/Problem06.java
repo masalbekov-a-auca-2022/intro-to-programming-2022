@@ -28,8 +28,10 @@ public class Problem06 extends PApplet {
     }
 
     public void buttons(float x, float y, float diam){
-        color(0, 0 ,0);
+        background(0, 0, 0);
+        color(0, 0 ,0, 0);
         stroke(255, 0, 0);
+        strokeWeight(10.0f);
         circle(x, y, diam*1.5f);
     }
 
@@ -43,7 +45,6 @@ public class Problem06 extends PApplet {
 
     public void draw() {
         background(0, 0, 0);
-
 
         //Sun
         float sunX = width * 0.5f;
