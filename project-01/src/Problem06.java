@@ -27,11 +27,11 @@ public class Problem06 extends PApplet {
         circle(x, y, diam);
     }
 
-    public void buttons(float x, float y, float diam){
-        background(0, 0, 0);
-        color(0, 0 ,0, 0);
+    public void buttons(float x, float y, float diam, int rColor, int gColor, int bColor ){
+        background(0, 0, 0, 0);
         stroke(255, 0, 0);
-        strokeWeight(10.0f);
+        strokeWeight(7.0f);
+        fill(rColor, gColor ,bColor, 0);
         circle(x, y, diam*1.5f);
     }
 
@@ -49,37 +49,60 @@ public class Problem06 extends PApplet {
         //Sun
         float sunX = width * 0.5f;
         float sunY = height * 0.5f;
-        celestialBody(sunX, sunY, SUN_D, 255, 255, 0, 255 );
-
 
         //Earth
         float earthX = sunX + cos(earthOrbitAngle) * EARTH_ORBIT;
         float earthY = sunY + sin(earthOrbitAngle) * EARTH_ORBIT;
-        celestialBody(earthX, earthY, EARTH_D, 28, 170, 214, 255);
-        earthOrbitAngle += EARTH_ORBIT_SPEED;
-
 
         //Venus
         float venusX = sunX + cos(venusOrbitAngle) * VENUS_ORBIT;
         float venusY = sunY + sin(venusOrbitAngle) * VENUS_ORBIT;
-        celestialBody(venusX, venusY, VENUS_D, 255, 102, 0, 255);
-        venusOrbitAngle += VENUS_ORBIT_SPEED;
-
 
         //Moon
         float moonX = earthX + cos(moonOrbitAngle) * MOON_ORBIT;
         float moonY = earthY + sin(moonOrbitAngle) * MOON_ORBIT;
+
+
+        //SunDraw
+        celestialBody(sunX, sunY, SUN_D, 255, 255, 0, 255 );
+
+        //EarthDraw
+        celestialBody(earthX, earthY, EARTH_D, 28, 170, 214, 255);
+        earthOrbitAngle += EARTH_ORBIT_SPEED;
+
+        //VenusDraw
+        celestialBody(venusX, venusY, VENUS_D, 255, 102, 0, 255);
+        venusOrbitAngle += VENUS_ORBIT_SPEED;
+
+        //MoonDraw
         celestialBody(moonX, moonY, MOON_D, 204, 255, 255, 255);
         moonOrbitAngle += MOON_ORBIT_SPEED;
 
-        //Buttons
+
+        //SunButton
         if (mouseX < 1500 && mouseX > 1200 && mouseY > 20 && mouseY < 180){
-            buttons(sunX, sunY, SUN_D);
+            stroke(255, 0 , 0);
+            strokeWeight(7.0f);
+            fill(0,0,0,0);
+            circle(sunX,sunY, SUN_D);
         } else {
             noStroke();
         }
         fill(0,0,255);
         rect(1200, 20, 300, 160);
+
+        //VenusButton
+
+
+
+
+
+
+
+
+
+
+
 
 
         //TODO
