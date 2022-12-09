@@ -27,12 +27,12 @@ public class Problem06 extends PApplet {
         circle(x, y, diam);
     }
 
-    public void buttons(float x, float y, float diam, int rColor, int gColor, int bColor ){
+    public void buttons(float x, float y, float diam, float orbit){
         background(0, 0, 0, 0);
         stroke(255, 0, 0);
         strokeWeight(7.0f);
-        fill(rColor, gColor ,bColor, 0);
-        circle(x, y, diam*1.5f);
+        fill(0, 0 ,0, 0);
+        circle(x, y, diam+orbit);
     }
 
 
@@ -80,7 +80,7 @@ public class Problem06 extends PApplet {
 
 
         //SunButton
-        if (mouseX < 1500 && mouseX > 1200 && mouseY > 20 && mouseY < 180){
+        if (mouseX < 1500 && mouseX > 1200 && mouseY > 20 && mouseY < 100){
             stroke(255, 0 , 0);
             strokeWeight(7.0f);
             fill(0,0,0,0);
@@ -89,9 +89,17 @@ public class Problem06 extends PApplet {
             noStroke();
         }
         fill(0,0,255);
+        rect(1200, 20, 300, 70);
+
+        //EarthButton
+        if  (mouseX < 1500 && mouseX > 1200 && mouseY > 100 && mouseY < 170){
+            buttons(sunX, sunY, SUN_D, EARTH_ORBIT);
+        } else {
+            noStroke();
+        }
+        fill(0,0,255);
         rect(1200, 20, 300, 160);
 
-        //VenusButton
 
 
 
