@@ -4,16 +4,19 @@ public class Problem12 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int n = scanner.nextInt();
-        int max_bid = 0;
-        String winner = "";
+        int star = 0;
         for (int i = 0; i < n; i++) {
-            String name = scanner.next();
-            int bid = scanner.nextInt();
-            if (bid > max_bid) {
-                max_bid = bid;
-                winner = name;
+            int points = scanner.nextInt() * 5 - scanner.nextInt() * 3;
+            if (points > 40){
+                star++;
             }
+
         }
-        System.out.println(winner);
+        if (n == star){
+            System.out.println(star + "+");
+        } else {
+            System.out.println(star);
+        }
+
     }
 }
