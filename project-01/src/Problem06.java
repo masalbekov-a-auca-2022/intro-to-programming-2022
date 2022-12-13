@@ -19,6 +19,14 @@ public class Problem06 extends PApplet {
     static final float MOON_ORBIT_SPEED = 0.07f;
     float moonOrbitAngle = 0.0f;
 
+    float buttonWidth;
+    float buttonHeight;
+    float buttonsX;
+    float venusBy;
+    float earthBy;
+    float sunBy;
+
+
 
 
     public void celestialBody(float x, float y, float diam, int rColor, int gColor, int bColor, int alpha) {
@@ -27,13 +35,20 @@ public class Problem06 extends PApplet {
         circle(x, y, diam);
     }
 
-    public void buttons(float x, float y, float diam, float orbit){
-        background(0, 0, 0, 0);
-        stroke(255, 0, 0);
-        strokeWeight(7.0f);
-        fill(0, 0 ,0, 0);
-        circle(x, y, diam+orbit);
+    public void buttons(String text, float x, float y){
+        fill(0,0,255);
+        stroke(255);
+        strokeWeight(5);
+        rect(x, y, buttonWidth, buttonHeight);
+        fill(255);
+        textAlign(CENTER);
+        textSize(buttonHeight*.8f);
+        if (isMouseInsideRect(x, y, buttonWidth, buttonHeight)){
+            buttonAction(text);
+            fill(255);
+        }
     }
+    public
 
 
     public void settings() {
@@ -41,6 +56,8 @@ public class Problem06 extends PApplet {
     }
 
     public void setup() {
+        buttonWidth = width/5f;
+        buttonHeight = height/15f;
     }
 
     public void draw() {
