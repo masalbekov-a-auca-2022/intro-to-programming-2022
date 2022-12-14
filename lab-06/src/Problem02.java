@@ -1,38 +1,47 @@
-import processing.core.*;
+import java.util.Scanner;
 
-public class Problem02 extends PApplet {
-
-    public void star(int rays, float x, float y, float r1, float r2, int color, float angle) {
-        float angleDelta = TWO_PI / rays;
-        stroke(color);
-        strokeWeight(2);
-        for (int i = 0; i < rays; i++) {
-            float r = i%2==0 ? r1 : r2;
-            float endX =x+cos(angle);
-            float endY=y+sin(angle);
-            line(x, y, endX, endY);
-            angle += angleDelta;
-
-        }
-
-
-    }
-
-    public void settings() {
-        fullScreen();
-    }
-
-    public void setup() {
-        background(0);
-        star(8, width*0.5f, height *0.5f, 200.0f, 100.0f, 0xFFFF0000, 0.0f);
-    }
-
-    public void draw() {
-        background(0, 0, 0);
-    }
-
+public class Problem02 {
     public static void main(String[] args) {
-        PApplet.main("Problem02");
+        Scanner scanner = new Scanner(System.in);
+        System.out.print("Year: ");
+        int y = scanner.nextInt();
+        System.out.print("Month: ");
+        int m = scanner.nextInt();
+        if (readInt(y, m) == true){
+            System.exit(0);
+        }
+        System.out.printf("Number of days: %d", getDaysOfMonth(y ,m));
+
+    }
+    public static int getDaysOfMonth(int y, int m) {
+        int day = 0;
+        if (isLeapYear(y) == true && m == 2) {
+            day = 29;
+        } else {
+            switch (m) {
+                case 1, 3, 5, 7, 8, 10, 12 -> day = 31;
+                case 2 -> day = 28;
+                case 4, 6, 9, 11 -> day = 30;
+            }
+        }
+        return day;
     }
 
+
+    public static boolean isLeapYear(int y) {
+        boolean a;
+        if (y % 4 == 0 || y % 100 == 0 && y % 400 == 0) {
+            a = true;
+        } else {
+            a = false;
+        }
+        return a;
+    }
+    public static boolean readInt(int y, int m){
+        boolean c = false;
+        if (y < 1 || m > 12 || m < 1){
+            c = true;
+        }
+        return c;
+    }
 }
