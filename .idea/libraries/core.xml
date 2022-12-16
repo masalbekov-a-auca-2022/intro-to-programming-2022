@@ -4,6 +4,8 @@
       <root url="jar://$PROJECT_DIR$/processing/core.jar!/" />
     </CLASSES>
     <JAVADOC />
-    <SOURCES />
+    <SOURCES>
+      <root url="file://$PROJECT_DIR$/project-02/src" />
+    </SOURCES>
   </library>
 </component>

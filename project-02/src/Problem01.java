@@ -13,8 +13,8 @@ public class Problem01 extends PApplet {
 
     public void setup() {
         x = random(width);
-        y = random(heigth);
-        r = random(width)
+        y = random(height);
+        r = random(width);
     }
 
     public void draw() {
