@@ -1,69 +1,71 @@
-import processing.core.*;
+import processing.core.PApplet;
 
 public class Problem03 extends PApplet {
+    public void star(int rays, float x, float y, float outerRadius, float innerRadius, int color, float angle) {
+        float angleDelta = TWO_PI / rays;
+        stroke(color);
+        for (int i = 0; i < rays; i++){
+            float radius;
+
+            radius = i % 2 == 0 ? outerRadius : innerRadius;
+            float endX1 = x + cos(angle) * radius;
+            float endY1 = y + sin(angle) * radius;
+            line(x, y, endX1, endY1);
+
+            radius = i % 2 != 0 ? outerRadius : innerRadius;
+            float endX2 = x + cos(angle + angleDelta) * radius;
+            float endY2 = y + sin(angle + angleDelta) * radius;
+            line(endX1, endY1, endX2, endY2);
+
+            angle += angleDelta;
+        }
+
+    }
     public void settings() {
-        fullScreen();
+        size(500, 500);
     }
 
-    float angleBig = 0;
-    float dAngleBig = 0.02f;
-    float[] angles = {0, 0, 0, 0};
-    float[] dAngles = {-0.02f, 0.1f, 0.015f, -0.04f};
-    float[] x = new float[4];
-    float[] y = new float[4];
-
-    public void setup() {
-        x[0] = width / 4f;
-        y[0] = height / 4f;
-        x[1] = width / 4f;
-        y[1] = height * 3f / 4;
-        x[2] = width * 3f / 4;
-        y[2] = height / 4f;
-        x[3] = width * 3f / 4;
-        y[3] = height * 3f / 4;
-    }
-
+    public void setup() {}
+    int r = 0;
     public void draw() {
         background(0);
+
         pushMatrix();
         translate(width / 2f, height / 2f);
-        rotate(angleBig);
-        drawStar(0, 0, height / 8f, 255, 0, 0);
-        angleBig += dAngleBig;
+        rotate(radians(r));
+        star(8, 0, 0, 100.0f, 30.0f, 0xFFFF0000, 0.0f);
         popMatrix();
-        for (int i = 0; i < 4; i++) {
-            pushMatrix();
-            translate(x[i], y[i]);
-            rotate(angles[i]);
-            drawStar(0, 0, height / 16f, 255, 255, 0);
-            angles[i] += dAngles[i];
-            popMatrix();
-        }
-    }
 
-    public void drawStar(float x, float y, float radius, int r, int g, int b) {
         pushMatrix();
-        translate(x, y);
-        stroke(r, g, b);
-        strokeWeight(height / 250f);
-        line(-radius, 0, radius, 0);
-        line(0, -radius, 0, radius);
-        float smallR = radius / 4f;
-        line(smallR, smallR, -smallR, -smallR);
-        line(smallR, -smallR, -smallR, smallR);
-        line(0, -smallR, 0, smallR);
+        translate(width / 1.3f, height / 4.0f);
+        rotate(radians(r));
+        star(8, 0, 0, 50.0f, 15.0f, 0xFFFFFF00, 0.0f);
         popMatrix();
-        line(x + smallR, y - smallR, x, y - radius);
-        line(x - smallR, y - smallR, x, y - radius);
-        line(x + smallR, y - smallR, x + radius, y);
-        line(x + smallR, y + smallR, x + radius, y);
-        line(x - smallR, y - smallR, x - radius, y);
-        line(x - smallR, y + smallR, x - radius, y);
-        line(x + smallR, y + smallR, x, y + radius);
-        line(x - smallR, y + smallR, x, y + radius);
+
+        pushMatrix();
+        translate(width / 1.3f, height / 1.3f);
+        rotate(radians(r));
+        star(8, 0, 0, 50.0f, 15.0f, 0xFFFFFF00, 0.0f);
+        popMatrix();
+
+        pushMatrix();
+        translate(width / 4.0f, height / 4.0f);
+        rotate(radians(r));
+        star(8, 0, 0, 50.0f, 15.0f, 0xFFFFFF00, 0.0f);
+        popMatrix();
+
+        pushMatrix();
+        translate(width / 4.0f, height / 1.3f);
+        rotate(radians(r));
+        star(8, 0, 0, 50.0f, 15.0f, 0xFFFFFF00, 0.0f);
+        popMatrix();
+
+        r -= 1;
+
     }
 
     public static void main(String[] args) {
         PApplet.main("Problem03");
     }
+
 }
