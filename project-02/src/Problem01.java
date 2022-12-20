@@ -1,76 +1,62 @@
 import processing.core.*;
 
 public class Problem01 extends PApplet {
-    public static void main(String[] args) {
-        PApplet.main("Problem01");
+    static final int SNOW_AMOUNT = 100;
+
+    float[] x = new float[SNOW_AMOUNT];
+    float[] y = new float[SNOW_AMOUNT];
+    float[] r = new float[SNOW_AMOUNT];
+    float[] color = new float[SNOW_AMOUNT];
+    float[] angle = new float[SNOW_AMOUNT];
+    float[] dAngle = new float[SNOW_AMOUNT];
+
+    public void snowFlake(float rays, float starX, float starY, float radius, float color, float angle) {
+        float angleDelta = TWO_PI / rays;
+        stroke(color);
+        for (int i = 0; i < rays; i++) {
+            //draw lines
+            float endX = starX + cos(angle) * radius;
+            float endY = starY + sin(angle) * radius;
+            line(starX, starY, endX, endY);
+
+            angle += angleDelta;
+        }
     }
 
     public void settings() {
         fullScreen();
     }
 
-    int SNOW_AMOUNT = 100;
-    float[] x = new float[SNOW_AMOUNT];
-    float[] y = new float[SNOW_AMOUNT];
-    float[] r = new float[SNOW_AMOUNT];
-    float[] angle = new float[SNOW_AMOUNT];
-    float[] dAngle = new float[SNOW_AMOUNT];
-    float[] dY = new float[SNOW_AMOUNT];
-    float minR;
-    float maxR;
-
     public void setup() {
-        minR = width / 140f;
-        maxR = width / 70f;
+        strokeWeight(3);
+
         for (int i = 0; i < SNOW_AMOUNT; i++) {
-            x[i] = -1;
-            y[i] = -1;
-            r[i] = -1;
-            angle[i] = -1;
-            dAngle[i] = -1;
-            dY[i] = -1;
+            x[i] = random(width);
+            y[i] = random(height);
+            r[i] = random(height / 40f, height / 30f);
+            angle[i] = random(2 * PI);
+            dAngle[i] = random(-0.02f, 0.01f);
+            color[i] = random(20, 255);
         }
     }
 
     public void draw() {
-        background(0);
+        background(0, 0, 0);
+
         for (int i = 0; i < SNOW_AMOUNT; i++) {
-            x[i] = x[i] == -1 ? random(width) : x[i];
-            y[i] = y[i] == -1 ? random(height) : y[i];
-            r[i] = r[i] == -1 ? random(minR, maxR) : r[i];
-            angle[i] = angle[i] == -1 ? random(-PI / 4, PI / 4) : angle[i];
-            dAngle[i] = dAngle[i] == -1 ? random(-PI / 200, PI / 200) : dAngle[i];
-            dY[i] = dY[i] == -1 ? random(height / 200f, height / 100f) : dY[i];
-            pushMatrix();
-            translate(x[i], y[i]);
-            rotate(angle[i]);
-            drawStar(r[i]);
+            snowFlake(8, x[i], y[i], r[i], color[i], angle[i]);
+
+            y[i] += r[i] / 5f;
             angle[i] += dAngle[i];
-            popMatrix();
-            y[i] += dY[i];
-            if(y[i] >= height + 2 * r[i]) {
-                x[i] = -1;
-                y[i] = -maxR;
-                r[i] = -1;
-                angle[i] = -1;
-                dAngle[i] = -1;
-                dY[i] = -1;
+
+            if (y[i] > height) {
+                x[i] = random(width);
+                y[i] = -r[i];
             }
         }
     }
 
-    public void drawStar(float r) {
-        int minWhite = 70;
-        int maxWhite = 255;
-        float white = map(r, minR, maxR, minWhite, maxWhite);
-        stroke(white);
-        strokeWeight(r / 8f);
-        line(-r, 0, r, 0);
-        line(0, r, 0, -r);
-        pushMatrix();
-        rotate(PI / 4);
-        line(-sqrt(2) * r, 0, sqrt(2) * r, 0);
-        line(0, sqrt(2) * r, 0, -sqrt(2) * r);
-        popMatrix();
+    public static void main(String[] args) {
+        PApplet.main("Problem01");
     }
 }
