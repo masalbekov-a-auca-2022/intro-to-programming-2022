@@ -39,10 +39,12 @@ public class Problem02 extends PApplet {
         }
         else if(c2){
             size2 +=changePX;
-            c1 = size2!=minSize;
-            c2 = size2 == minSize;
+            c2 = size2 != minSize;
             changePX = minSize == size2||maxSize == size2 ? -changePX:changePX;
-
+        } else {
+            size3 +=changePX;
+            c1 = size3 == minSize;
+            changePX = minSize == size3||maxSize == size3 ? -changePX:changePX;
         }
     }
 
