@@ -43,12 +43,11 @@ public class Problem06 extends PApplet {
         fill(255);
         textAlign(CENTER);
         textSize(buttonHeight*.8f);
-        if (isMouseInsideRect(x, y, buttonWidth, buttonHeight)){
-            buttonAction(text);
+        //if (isMouseInsideRect(x, y, buttonWidth, buttonHeight)){
+           // buttonAction(text);
             fill(255);
         }
-    }
-    public
+   // }
 
 
     public void settings() {
@@ -110,7 +109,7 @@ public class Problem06 extends PApplet {
 
         //EarthButton
         if  (mouseX < 1500 && mouseX > 1200 && mouseY > 100 && mouseY < 170){
-            buttons(sunX, sunY, SUN_D, EARTH_ORBIT);
+            //buttons(sunX, sunY, SUN_D, EARTH_ORBIT);
         } else {
             noStroke();
         }
