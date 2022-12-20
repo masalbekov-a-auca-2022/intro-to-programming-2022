@@ -3,11 +3,11 @@ import java.util.Scanner;
 public class Problem01 {
     public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
-        System.out.println("Your coordinate: ");
+        System.out.print("Your coordinate: ");
         int a = scanner.nextInt();
-        System.out.println("Coordinate of 1st point: ");
+        System.out.print("Coordinate of 1st point: ");
         int b = scanner.nextInt();
-        System.out.println("Coordinate of 2nd point: ");
+        System.out.print("Coordinate of 2nd point: ");
         int c = scanner.nextInt();
         int d1 = abs(b - a);
         int d2 = abs(c - a);
