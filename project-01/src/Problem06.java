@@ -28,14 +28,18 @@ public class Problem06 extends PApplet {
         circle(0, 0, 200);
 
         // Earth
-        fill(0, 255, 20);
+        fill(0, 255, 255);
         circle(center_x, center_y, 70);
+
+        // Venus
+        fill(255, 120, 0);
+        circle(200,50, 60);
 
         // moon
         translate(center_x, center_y);
         rotate(radians(-r * 3));
         fill(255);
-        circle(10, center_y, 25);
+        circle(55, center_y, 25);
 
         popMatrix();
         r -= 1;
